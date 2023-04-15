@@ -1,12 +1,17 @@
+let arr=[-4,1,2,-1];
+let target=1;
+
 function threeSum(arr, target) {
 // write your code here
-	let arr=arr.sort();var ans;
-	for (let i = 0; i < arr.length-2; i++) {
-		let sum=arr[i];let reamining=target-arr[i];
-		let j=i+1;let k=arr.length-1;
+	let array=arr.sort();var ans;
+	for (let i = 0; i < array.length-2; i++) {
+		let sum=array[i];let remaining=target-array[i];
+		let j=i+1;let k=array.length-1;
 		while (j<k) {
-			let current=arr[j]+arr[k];
+			let current=array[j]+array[k];
+			console.log(current);
 			sum=sum+current;
+			console.log(sum);
 			if((ans==undefined) || (Math.abs(ans-target)>Math.abs(sum-target))){
 				ans=sum;
 			}
@@ -19,4 +24,5 @@ function threeSum(arr, target) {
 	}
 	return ans;
 }
+console.log(threeSum(arr,target));
 module.exports = threeSum;
